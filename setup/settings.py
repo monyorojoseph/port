@@ -29,8 +29,6 @@ DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = []
-else:
-    ALLOWED_HOSTS = ['monyorojoseph.herokuapp.com']
 
 
 # Application definition
@@ -88,17 +86,6 @@ if DEBUG:
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'd3d1cm1v82v1v',
-            'USER': 'kubxtiliusucch',
-            'PASSWORD': '10569b4c900fe8b23c4904e5fc0b43b894db44a04eb167e06d0aff6210dbff2b',
-            'HOST': 'ec2-34-192-210-139.compute-1.amazonaws.com',
-            'PORT': 5432,
         }
     }
 
