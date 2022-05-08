@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="content project-post">
+    <h4 class="post-title">{{post.title}}</h4>
+    <article>{{post.content.html|safe}}</article>
+</section>
+{% endblock content %}

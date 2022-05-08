@@ -1,0 +1,30 @@
+<div class="projects">
+    <h4 class="title">projects</h4>
+    <!-- projects container-->
+    <div class="projects-container">            
+        {% for project in projects %}
+            <!--project card-->
+            <div class="project">
+                <!--cover image-->
+                <img src={{project.cover_image_url}} alt={{project.name}} />
+                <!-- name of the project-->
+                <h5>{{project.name}}</h5>
+                <!--description--> 
+                <div class="links">
+                    <!--demo link-->
+                    <a class='demo' href={{project.link}}>Demo</a>
+                    <!--more details link-->
+                    <a class='read' href={{project.get_absolute_url}}>Read</a>
+                </div>
+                <!--stack-->
+                <ul class="stack">
+                    {% for stack in project.tech_stack.all %}
+                        <li>{{stack}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% empty%}
+            <div class="null">No projects yet.</div>
+        {% endfor %}
+    </div>
+</div>

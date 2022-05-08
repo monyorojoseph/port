@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="content project-post">
+    <h4 class="post-title">{{project.name}}</h4>
+    <article>{{project.description.html|safe}}</article>
+    <ul>
+        {% for stack in tech_stack  %}
+            <li>{{stack}}</li>        
+        {% endfor %}
+    </ul>
+    <a href={{project.link}}>See demo</a>
+    <!--stack-->
+    <ul class="stack">
+        {% for stack in project.tech_stack.all %}
+            <li>{{stack}}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- main section -->
+    <section class="content">
+        <!-- intro -->
+        <div class="img-info">
+            <img src="{{about.get_image_url}}" alt="my image">
+            <article>{{about.introduction.html|safe}}</article>
+        </div>
+        <!-- social -->
+        <div class="socials">
+            <a href="{{about.github_url}}"><i class="fab fa-brands fa-github"></i></a> 
+            <a href="{{about.twitter_url}}"><i class="fab fa-brands fa-twitter"></i></a>
+            <a href="{{about.discord_id}}"><i class="fab fa-brands fa-discord"></i></a>
+        </div>
+        </div>
+        <!-- projects-->
+        {% include "includes/projects_list.html" %}
+        
+        <!--posts-->
+        {% include "includes/posts_list.html" %}
+        
+        <!-- about -->
+        <div >
+            <h4 class="title">about</h4>
+            <article>{{about.content.html|safe}}</article>
+        </div>
+        
+        <p class="email">email:- {{about.email_address}}</p>
+
+    </section>
+{% endblock content %}

@@ -1,0 +1,12 @@
+<h4 class="title">posts</h4>
+
+<ul class="posts-container">
+    {% for post in posts%}
+            <li class="post-item">
+                <a href="{{post.get_absolute_url}}" >{{post.title}}</a>
+                <span>{{post.published|date:"D m"}}
+            </li>
+    {% empty %}
+    <li class="null">No posts yet.</li>
+    {% endfor %}
+</ul>
